@@ -9,11 +9,7 @@ type ResponseData = {
   user?: any;
 };
 
-type RequestBody = {
-  email: string;
-  password: string;
-};
-export const POST = async (req: NextRequest & { body: RequestBody }) => {
+export const POST = async (req: NextRequest) => {
   try {
     const data = await req.json();
     const { email, password } = data;
